@@ -60,9 +60,41 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-
+		/*@SuppressWarnings("serial") class AffineTransformDemo extends JPanel {
+		   // Named-constants for dimensions
+		   public static final int CANVAS_WIDTH = WIDTH;
+		   public static final int CANVAS_HEIGHT = HEIGHT;
+		   public static final String TITLE = "Affine Transform Demo";*/
+		 
+		  		 
+		   /** Constructor to set up the GUI components **/
+		   
+	//	}
+	AffineTransformDemo();
 	drawBricks();
+	drawPaddle();
+	drawOval();
 	}
+	private void AffineTransformDemo() {
+	      setPreferredSize(new Dimension(WIDTH, HEIGHT));
+	      
+	   }
+	private void drawPaddle(){
+	GRect paddle = new GRect((WIDTH/2)- 30, HEIGHT - PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT);
+	//add(myRect(), x, y);//X,Y
+	add (paddle);
+	paddle.setFilled(true);
+	paddle.setColor(Color.BLACK);
+		}
+	
+	private void drawOval(){
+		GOval ball = new GOval((WIDTH/2), (HEIGHT - (PADDLE_Y_OFFSET + PADDLE_HEIGHT + 3)), BALL_RADIUS , BALL_RADIUS);
+		//add(myRect(), x, y);//X,Y
+		add (ball);
+		ball.setFilled(true);
+		ball.setColor(Color.BLACK);
+			}
+	
 		private void drawBricks(){
 //		int x = BRICK_SEP;
 		int y = BRICK_Y_OFFSET;
