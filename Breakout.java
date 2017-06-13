@@ -10,10 +10,10 @@
 import acm.graphics.*;
 import acm.program.*;
 import acm.util.*;
-
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class Breakout extends GraphicsProgram {
 
@@ -60,7 +60,54 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		/* You fill this in, along with any subsidiary methods */
-	}
 
+	drawBricks();
+	}
+		private void drawBricks(){
+//		int x = BRICK_SEP;
+		int y = BRICK_Y_OFFSET;
+//		int brickCount = 0;
+		int rowCount = 0;
+		
+		while  ( y < (BRICK_Y_OFFSET + 10 *(BRICK_HEIGHT + BRICK_SEP))) {
+			int brickCount = 0;
+			int x = BRICK_SEP;
+			while (brickCount < 10){
+				//myRect().setColor(Color.RED);
+				//myRect().setFillColor(Color.RED) ;
+				GRect brick = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
+				//add(myRect(), x, y);//X,Y
+				add (brick);
+				brick.setFilled(true);
+				if (rowCount < 2 )
+					{brick.setColor(Color.RED);
+					}
+				if (rowCount == 2 ||rowCount == 3  )
+				{brick.setColor(Color.ORANGE);
+				}
+				if (rowCount == 4 ||rowCount == 5  )
+				{brick.setColor(Color.YELLOW);
+				}
+				if (rowCount == 6 ||rowCount == 7  )
+				{brick.setColor(Color.GREEN);
+				}
+				if (rowCount == 8 ||rowCount == 9  )
+				{brick.setColor(Color.CYAN);
+				}
+				x = x + BRICK_WIDTH + BRICK_SEP;
+				brickCount++;
+				}
+			rowCount++;
+			y = (BRICK_Y_OFFSET + rowCount *(BRICK_HEIGHT + BRICK_SEP));
+		}
+	}
+//	 private RandomGenerator rgen = RandomGenerator.getInstance();
+//	 double vx = rgen.nextDouble(1.0, 3.0); 
+//	 if (rgen.nextBoolean(0.5)) vx = -vx;
+	 
+/*	private  GRect myRect(){
+	GRect rect = new GRect(BRICK_WIDTH, BRICK_HEIGHT);
+	rect.setFilled(true);
+	return rect;
+	} */
 }
