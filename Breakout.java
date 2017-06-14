@@ -79,6 +79,7 @@ public class Breakout extends GraphicsProgram {
 	      setPreferredSize(new Dimension(WIDTH, HEIGHT));
 	      
 	   }
+	//Draw paddle
 	private void drawPaddle(){
 	GRect paddle = new GRect((WIDTH/2)- 30, HEIGHT - PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT);
 	//add(myRect(), x, y);//X,Y
@@ -87,8 +88,9 @@ public class Breakout extends GraphicsProgram {
 	paddle.setColor(Color.BLACK);
 		}
 	
+	//Draw ball
 	private void drawOval(){
-		GOval ball = new GOval((WIDTH/2), (HEIGHT - (PADDLE_Y_OFFSET + PADDLE_HEIGHT + 3)), BALL_RADIUS , BALL_RADIUS);
+		GOval ball = new GOval((WIDTH/2), (HEIGHT - (PADDLE_Y_OFFSET + PADDLE_HEIGHT + 2)), BALL_RADIUS , BALL_RADIUS);
 		//add(myRect(), x, y);//X,Y
 		add (ball);
 		ball.setFilled(true);
