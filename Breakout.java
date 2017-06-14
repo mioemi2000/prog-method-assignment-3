@@ -97,6 +97,10 @@ public class Breakout extends GraphicsProgram {
 		ball.setColor(Color.BLACK);
 			}
 	
+
+//Mouse actions
+
+//Draw coloured bricks
 		private void drawBricks(){
 //		int x = BRICK_SEP;
 		int y = BRICK_Y_OFFSET;
